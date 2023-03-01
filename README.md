@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Project: Tweet With Props
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, you'll start with static React components and rework them to display dynamic data using props.
 
-## Available Scripts
+## Starter Code
 
-In the project directory, you can run:
+The starter code is in this repository. Clone it to your machine. Open a command prompt in the repository directory, then run `npm install` to install dependencies. 
 
-### `npm start`
+Run `npm start` and open [http://localhost:3000](http://localhost:3000) to view the application in your browser. You should see a fairly respectable-looking tweet:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![static tweet](images/tweet.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Steps
 
-### `npm test`
+### Update the `Tweet` Component
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Update the `Tweet` component to accept a `tweet` prop. Pass the `testTweet` object in the `Tweet` component as the `tweet` prop.
 
-### `npm run build`
+Refresh the browser after making these changes. Nothing should be different yet.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Update the `Avatar` Component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Update the `Avatar` component to take the tweet's `gravatar` property as a prop. Gravatar calls this property a hash, so `hash` would be a good name for the prop.Now update 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`Avatar` will use this new prop to construct the url. The format is https://www.gravatar.com/avatar/_hash_
 
-### `npm run eject`
+### Update the `Message` Component
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`Message` should take the tweet's `message` property as a prop. Instead of static text, you’re rendering the `text` prop that was passed in.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Refresh the browser and you’ll see the message is now “Something about dogs.” Success!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Update the `NameWithHandle` and `Time` Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Update the `NameWithHandle` to accept the tweet's `author` property as a prop
 
-## Learn More
+Update `Time` to take the tweet's `timestamp` as a prop. Notice that some date and time arithmetic will be necessary to convert the timestamp to a relative time staring like "3 days ago."
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Update the Remaining Components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+There are only two components left to update: `RetweetButton` and `LikeButton`, which need to display counts of retweets and likes. Currently, they don’t display any numbers at all, just an icon.
 
-### Code Splitting
+It should be clear by now which tweet properties will serve as a prop for these components. As with real Twitter though, if the number of likes or retweets is 0, the component should not render 0, it should render nothing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Finally, the CSS for the buttons will need to be updated.
 
-### Analyzing the Bundle Size
+### Hints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- If you have your own Gravatar and want to use it, go to <http://daveceddia.com/gravatar> to figure out its URL.
+- An alternative to writing your own method to convert timestamp to relative date string would be to explore [one of these libraries](https://momentjs.com/docs/#/-project-status/recommendations/).
