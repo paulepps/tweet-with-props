@@ -48,3 +48,9 @@ Finally, the CSS for the buttons will need to be updated.
 
 - If you have your own Gravatar and want to use it, go to <http://daveceddia.com/gravatar> to figure out its URL.
 - An alternative to writing your own method to convert timestamp to relative date string would be to explore [one of these libraries](https://momentjs.com/docs/#/-project-status/recommendations/).
+
+### Expected Results
+
+Your avatar may look different but you should expect the updated tweet to look something like this:
+
+![tweet with props](images/tweet2.png)
