@@ -14,7 +14,7 @@ Run `npm start` and open [http://localhost:3000](http://localhost:3000) to view 
 
 ### Update the `Tweet` Component
 
-Update the `Tweet` component to accept a `tweet` prop. Pass the `testTweet` object in the `Tweet` component as the `tweet` prop.
+Update the `Tweet` component to accept a `tweet` prop. Pass the `testTweet` object in `index.js` as the `tweet` prop.
 
 Refresh the browser after making these changes. Nothing should be different yet.
 
