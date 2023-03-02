@@ -22,7 +22,7 @@ Refresh the browser after making these changes. Nothing should be different yet.
 
 Update the `Avatar` component to take the tweet's `gravatar` property as a prop. Gravatar calls this property a hash, so `hash` would be a good name for the prop.Now update 
 
-`Avatar` will use this new prop to construct the url. The format is https://www.gravatar.com/avatar/_hash_
+`Avatar` will use this new prop to construct the url. The format is https://www.gravatar.com/avatar/hash
 
 ### Update the `Message` Component
 
